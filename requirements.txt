@@ -1,0 +1,4 @@
+beautifulsoup4==4.11.2
+cltk==1.1.6
+Flask==2.2.3
+keybert==0.7.0

@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Labrada:wght@400;500;600&display=swap');
+
+*{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+html, body{
+    height: 97%;
+}
+
+body{
+    background-color: #fffbf6;
+    margin: 3% 6%;
+    font-size: 1.2rem;
+}
+
+h1, h1>*, h3{
+    font-family: 'Labrada';
+    font-weight: 500;
+    color: #642020;
+}
+
+h1{
+    font-size: 2.2rem;
+}
+
+#about-link-div{
+    text-align: right;
+}
+
+a, a:visited, .link-text{
+    font-family: 'Labrada';
+    font-weight: 400;
+    color: #521a1a;
+    text-decoration: none;
+}
+
+a:hover .link-text{
+    text-decoration: underline;
+}
+
+#othello-kw{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 90%;
+}
+
+#othello-title{
+    font-family: 'Labrada';
+    font-size: 3rem;
+    font-weight: 600;
+    margin-right: 0.8rem;
+}
+
+#input-side{
+    min-width: 48%;
+}
+
+#output-side{
+    min-width: 50%;
+    height: 100%;
+}
+
+#othello-kw form div{
+    margin-bottom: 1rem;
+}
+
+#othello-kw form select, input{
+    width: 12em;
+    padding: 0.5em;
+    margin-top: 0.5em;
+    font-size: 1em;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#othello-kw form button{
+    padding: 0.5em;
+    margin-top: 1.2em;
+    font-size: 1em;
+
+}
+
+#acts, #scenes{
+    display: none;
+}
+
+#othello-kw #output-box{
+    width: 100%;
+    height: 85%;
+    font-size: 1em;
+    padding: 2%;
+    overflow-y: scroll;
+    color: #303030;
+    border-color: #585858;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/*****************About*****************/
+#about{
+    padding: 2% 10% 0%;
+}
+
+#about-content{
+    margin-top: 3%;
+}
+
+#about-content .about-main{
+    line-height: 1.7em;
+}

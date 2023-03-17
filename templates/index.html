@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Othello CharKey Extractor</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"/>
+        <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+    </head>
+    <body>
+        <header id="about-link-div">
+            <a href="{{url_for('about')}}"><span class="link-text">About</span></a>
+        </header>
+        <main id="othello-kw">
+            <div id="input-side">
+                <h1><span id="othello-title">Othello</span>Character Keywords</h1>
+
+                <form name="keyword-form">
+                    <div>
+                        <label for="characters">Character</label><br/>
+                        <select name="characters" id="characters">
+                            <option value="">--Select Character--</option>
+                            {% for char in characters %}
+                                <option value={{ char }}>{{ char }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div id="acts">
+                        <label for="act-select">Act</label><br/>
+                        <select name="act-select" id="act-select">
+                        </select>  
+                    </div>
+
+                    <div id="scenes">
+                        <label for="scene-select">Scene</label><br/>
+                        <select name="scene-select" id="scene-select">
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="numkeys-select"># Keywords</label><br/>
+                        <input type="number" name="numkeys-select" id="numkeys-select" value="20" min="1">
+                    </div>
+
+                    <button type="submit" id="form-btn">Get Keywords</button>
+                </form>
+            </div>
+
+            <div id="output-side">
+                <h3>Output</h3>
+                <textarea id="output-box" placeholder="Extracted keywords will show up here" disabled></textarea>
+            </div>
+        </main>
+    </body>
+</html>

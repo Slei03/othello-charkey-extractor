@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Othello CharKey Extractor - About</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <link rel="stylesheet" href="./static/styles.css"/>
+    </head>
+    <body>
+        <main id="about">
+            <a href = "{{url_for('index')}}">&larr; <span class="link-text">Othello CharKey Extractor</span></a>
+            <div id="about-content">
+                <h1>About</h1>
+                <p class="about-main"> <b>Othello CharKey Extractor</b> (Othello Character Keywords Extractor) is a web app project for LTCS180. The web app can be used to extract 
+                    keywords from dialogues of significant characters in Shakespeare's play, <i>Othello</i>.  The identification
+                    and extraction of keywords is performed by 
+                    <a href="https://maartengr.github.io/KeyBERT/"><span class="link-text">KeyBert</span></a>.<br/>
+                    The character, the number of keywords to extract, and if desired, a specific act and/or scene, can be selected 
+                    to determine whose and which dialogues to extract a number of keywords from.
+                    The extracted keywords can then be examined and used to help identify the role the selected 
+                    character plays in a selected act/scene of <i>Othello</i> or in <i>Othello</i> in general. <br/>
+                </p>
+                <p><b>Project Resources:</b></p>
+                <ul class="about-main">
+                    <li><i>Othello</i> Text: <a href="https://dracor.org/shake/othello#downloads">
+                        <span class="link-text">https://dracor.org/shake/othello#downloads</span></a></li>
+                    <li>KeyBert: <a href="https://maartengr.github.io/KeyBERT/">
+                        <span class="link-text">https://maartengr.github.io/KeyBERT/</span></a></li>
+                    <li>Early Modern English (as Shakespeare is classified "Early Modern English") and
+                        Middle English (in case of some overlap) stopwords found online were used with KeyBert.
+                        <ul>
+                            <li>Early Modern English Stopwords: <a href="http://earlymodernconversions.com/wp-content/uploads/2013/12/stopwords.txt">
+                                <span class="link-text">http://earlymodernconversions.com/wp-content/uploads/2013/12/stopwords.txt</a></li>
+                            <li>Middle English: <a href="https://docs.cltk.org/en/latest/cltk.stops.html">
+                                <span class="link-text">https://docs.cltk.org/en/latest/cltk.stops.html</span></a></li></li>
+                        </ul>
+                    </li>
+                </ul>
+                <p><b>GitHub Link: </b></p>
+            </div>
+        </main>
+    </body>
+</html>
