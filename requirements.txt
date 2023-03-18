@@ -2,3 +2,4 @@ beautifulsoup4==4.11.2
 cltk==1.0.25
 Flask==2.2.2
 keybert==0.7.0
+gunicorn
