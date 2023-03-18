@@ -10,6 +10,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
     let numKeywords = document.getElementById("numkeys-select");
 
+    let form = document.getElementById("keyword-form");
     let formBtn = document.getElementById("form-btn");
 
     let outputBox = document.getElementById("output-box");
@@ -26,14 +27,18 @@ window.addEventListener("DOMContentLoaded", ()=>{
             await fetch(`/getcharact/${charSelect.value}`)
             .then(response => response.json())
             .then(data => {
+                let acts = data["acts"];
                 let actOptions = "<option value=''>All</option>";
-                for(let i = 0; i < data.length; i++){
-                    actOptions += "<option value=" + data[i] + ">" + data[i] + "</option>";
+                for(let i = 0; i < acts.length; i++){
+                    actOptions += "<option value=" + acts[i] + ">" + acts[i] + "</option>";
                 }
                 actSelect.innerHTML = actOptions;
+                actsDiv.style.display = "block";
+            }).catch(err => {
+                console.error(err);
+                resetForm();
+                outputBox.innerText = "Sorry, something went wrong..."
             });
-
-            actsDiv.style.display = "block";
         }
         formBtn.style.display = "block";
     });
@@ -47,13 +52,18 @@ window.addEventListener("DOMContentLoaded", ()=>{
             await fetch(`/getcharscene/${charSelect.value}&${actSelect.value}`)
             .then(response => response.json())
             .then(data => {
+                let scenes = data["scenes"];
                 let sceneOptions = "<option value=''>All</option>";
-                for(let i = 0; i < data.length; i++){
-                    sceneOptions += "<option value=" + data[i] + ">" + data[i] + "</option>";
+                for(let i = 0; i < scenes.length; i++){
+                    sceneOptions += "<option value=" + scenes[i] + ">" + scenes[i] + "</option>";
                 }
                 sceneSelect.innerHTML = sceneOptions;
+                scenesDiv.style.display = "block";
+            }).catch(err => {
+                console.error(err);
+                resetForm();
+                outputBox.innerText = "Sorry, something went wrong..."
             });
-            scenesDiv.style.display = "block";
         }
         formBtn.style.display = "block";
     });
@@ -81,16 +91,26 @@ window.addEventListener("DOMContentLoaded", ()=>{
             await fetch(`/getkeywords/${character}&${act}&${scene}&${numKeys}`)
             .then(response => response.json())
             .then(data => {
+                let keywords = data["keywords"];
                 let listHtmlString = ""
-                for(let i = 0; i < data.length; i++){
-                    listHtmlString += (i+1) + ". "+ data[i][0] + ", " + data[i][1] + "\n";
+                for(let i = 0; i < keywords.length; i++){
+                    listHtmlString += (i+1) + ". "+ keywords[i][0] + ", " + keywords[i][1] + "\n";
                 }
                 outputBox.innerHTML = listHtmlString;
             }).catch(err => {
+                console.error(err);
+                resetForm();
                 outputBox.innerText = "Sorry, something went wrong..."
             });
         }
     })
 
+    function resetForm(){
+        form.reset();
+        actSelect.innerHTML = "";
+        sceneSelect.innerHTML = "";
+        actsDiv.style.display = "none";
+        scenesDiv.style.display = "none";
+    }
 
 })

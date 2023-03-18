@@ -36,7 +36,7 @@ def getcharact(character):
         found_char = act.find('sp', who=cast[character])
         if(found_char):
             char_acts.append(act.get('n'))
-    return jsonify(char_acts)
+    return jsonify({"acts": char_acts})
 
 
 @app.route('/getcharscene/<character>&<actn>', methods=['GET'])
@@ -47,7 +47,7 @@ def getcharscene(character, actn):
         found_char = scene.find('sp', who=cast[character])
         if(found_char):
             char_scenes.append(scene.get('n'))
-    return jsonify(char_scenes)
+    return jsonify({"scenes": char_scenes})
 
 @app.route('/getkeywords/<character>&<actn>&<scenen>&<keywordsn>', methods=['GET'])
 def getkeywords(character, actn, scenen, keywordsn):
@@ -77,7 +77,7 @@ def getkeywords(character, actn, scenen, keywordsn):
         speech = line if (len(speech) == 0) else (speech + ' ' + line)
     
     keywords = keywords_model.extract_keywords(speech, keyphrase_ngram_range=(1,1), stop_words=stopwords, top_n=numkeywords)
-    return jsonify(keywords)
+    return jsonify({"keywords": keywords})
 
 @app.route('/about')
 def about():
