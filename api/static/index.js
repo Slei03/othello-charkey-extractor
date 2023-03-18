@@ -81,7 +81,6 @@ window.addEventListener("DOMContentLoaded", ()=>{
             await fetch(`/getkeywords/${character}&${act}&${scene}&${numKeys}`)
             .then(response => response.json())
             .then(data => {
-                console.log(data);
                 let listHtmlString = ""
                 for(let i = 0; i < data.length; i++){
                     listHtmlString += (i+1) + ". "+ data[i][0] + ", " + data[i][1] + "\n";

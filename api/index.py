@@ -1,6 +1,6 @@
+from flask import Flask, render_template, jsonify
 from bs4 import BeautifulSoup
 from keybert import KeyBERT
-from flask import Flask, render_template, jsonify, url_for
 from cltk.stops.enm import STOPS as middle_english_stopwords
 
 app = Flask(__name__)
