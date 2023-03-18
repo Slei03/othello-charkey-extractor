@@ -3,3 +3,4 @@ cltk==1.0.25
 Flask==2.2.2
 keybert==0.7.0
 gunicorn
+lxml
