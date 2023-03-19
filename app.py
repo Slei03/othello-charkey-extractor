@@ -31,11 +31,11 @@ def index():
 
 @app.route('/getcharact/<character>', methods=['GET'])
 def getcharact(character):
-    char_acts = []
-    for act in oth_soup.find_all('div', type='act'):
+    char_acts = [1, 2, 3, 4, 5]
+    """ for act in oth_soup.find_all('div', type='act'):
         found_char = act.find('sp', who=cast[character])
         if(found_char):
-            char_acts.append(act.get('n'))
+            char_acts.append(act.get('n')) """
     return jsonify({"acts": char_acts})
 
 
