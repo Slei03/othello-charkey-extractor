@@ -1,6 +1,8 @@
-## Othello CharKey Extractor
+# Othello CharKey Extractor
 ![Othello CharKey Preview](oth-preview.gif)
+<b>Othello CharKey Extractor</b> (Othello Character Keywords Extractor) is a web app project for LTCS180. The web app can be used to extract keywords from dialogues of significant characters in Shakespeare's play, <i>Othello</i>.  The identification and extraction of keywords is performed by [KeyBert](https://maartengr.github.io/KeyBERT/). Read more in the 'About' page of web app.
 
+## Accesssing/Running Othello CharKey Extractor Web App
 <b>Othello CharKey Extractor</b> is a web app that uses Flask.
 
 To access/run the Flask app locally:
