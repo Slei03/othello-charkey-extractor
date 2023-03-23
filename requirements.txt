@@ -1,5 +1,5 @@
 beautifulsoup4==4.12.0
-cltk==1.0.25
+cltk==1.1.6
 Flask==2.2.2
 keybert==0.7.0
 lxml
